@@ -1,7 +1,7 @@
 import Person from "../models/person.js";
 import { isValidName } from "../middlewares/validation.js";
 
-const handleServerEror = (res, err) => {
+const handleServerError = (res, err) => {
   console.error(err);
   res.status(500).json({ error: " Internal server error" });
 };
@@ -60,7 +60,7 @@ export async function updatePersonById(req, res) {
 
     res.status(200).json(updatedPerson);
   } catch (err) {
-    handleServerEror(res, err);
+    handleServerError(res, err);
   }
 }
 
@@ -76,6 +76,6 @@ export async function deletePersonById(req, res) {
 
     res.status(200).json({ message: "Person deleted successfully" });
   } catch (err) {
-    handleServerEror(res, err);
+    handleServerError(res, err);
   }
 }

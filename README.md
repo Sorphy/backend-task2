@@ -30,16 +30,28 @@ HTTP Method: POST
   "error": "Internal Server Error"
 }
 ```
-# 2.  Get a Person
-Endpoint: /api/:user_id
+# 2.  Get All Persons
+Endpoint: /api
 HTTP Method: GET
 * Response Format (Success):
 ```json
-{
-    "name": "S. T. Abidoye",
-    "_id": "65003a3622bf2562c839d844",
-    "__v": 0
-}
+[
+    {
+        "_id": "64ff288b0db1fc84b4c40de2",
+        "name": "Arike",
+        "__v": 0
+    },
+    {
+        "_id": "64ff2bb8ac4507004a7f67fe",
+        "name": "Sapphire Abidoye",
+        "__v": 0
+    },
+    {
+        "_id": "64ff2fe6d8d76e130b9e7e5c",
+        "name": "Titilope",
+        "__v": 0
+    }
+]
 ```
 * Response Format (Error):
 ```json
