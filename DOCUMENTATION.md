@@ -4,25 +4,86 @@ This documentation provides details on how to use the API created for the "backe
 
 ## API Endpoints
 The API consists of the following endpoints:
-# Create a Person
+# 1. Create a Person
 Endpoint: /api
 HTTP Method: POST
-Pass a json containing "name" as key, string of name as value in the request body.
+*  Request Body Format:
+```json
+{
+  "name": "Sofiyyah Abidoye"
+}
+```
 
-# Read a Person
+* Response Format (Success):
+```json
+{
+    "name": "S. T. Abidoye",
+    "_id": "65003a3622bf2562c839d844",
+    "__v": 0
+}
+```
+
+* Response Format (Error):
+```json
+{
+  "error": "Internal Server Error"
+}
+```
+# 2.  Get a Person
 Endpoint: /api/:user_id
 HTTP Method: GET
-
-# Update a Person
+* Response Format (Success):
+```json
+{
+    "name": "S. T. Abidoye",
+    "_id": "65003a3622bf2562c839d844",
+    "__v": 0
+}
+```
+* Response Format (Error):
+```json
+{
+  "error": "Internal Server Error"
+}
+```
+# 3. Update a Person
 Endpoint: /api/:user_id
 HTTP Method: PUT
-Pass a json containing "name" as key, string of name as new value in the request body.
-
-# Delete a Person
+*  Request Body Format:
+```json
+{
+  "name": "Titi Abidoye"
+}
+```
+* Response Format (Success):
+```json
+{
+    "name": "S. T. Abidoye",
+    "_id": "65003a3622bf2562c839d844",
+    "__v": 0
+}
+```
+* Response Format (Error):
+```json
+{
+  "error": "Internal Server Error"
+}
+```
+# 4. Delete a Person
 Endpoint: /api/:user_id
 HTTP Method: DELETE
-
-
+* Response Format (Success):
+```json
+{
+  "error": "Person deleted successfully"
+}
+```
+* Response Format (Error):
+```json
+{
+  "error": "Internal Server Error"
+}
+```
 ## Known Limitations and Assumptions
 The API assumes that the "name" field provided during person creation and updates should only contain letters, spaces, and dots. It uses the isValidName function to validate the name format.
 

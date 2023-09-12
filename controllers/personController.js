@@ -79,7 +79,7 @@ export async function deletePersonById(req, res) {
       return res.status(404).json({ error: "Person not found" });
     }
 
-    res.status(200).json({ message: "Name deleted successfully" });
+    res.status(200).json({ message: "Person deleted successfully" });
   } catch (err) {
     handleServerEror(res, err);
   }
