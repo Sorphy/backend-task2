@@ -42,16 +42,6 @@ export async function getPersonById(req, res) {
     handleServerEror(res, err);
   }
 }
-
-export async function getAllPersons(req, res) {
-  try {
-    const persons = await Person.find(); 
-    res.status(200).json(persons);
-  } catch (err) {
-    handleServerEror(res, err);
-  }
-} 
-
 export async function updatePersonById(req, res) {
   const { user_id } = req.params;
   const { name } = req.body;
