@@ -43,6 +43,15 @@ export async function getPersonById(req, res) {
   }
 }
 
+export async function getAllPersons(req, res) {
+  try {
+    const persons = await Person.find(); 
+    res.status(200).json(persons);
+  } catch (err) {
+    handleServerError(res, err);
+  }
+} 
+
 export async function updatePersonById(req, res) {
   const { user_id } = req.params;
   const { name } = req.body;

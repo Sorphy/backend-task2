@@ -47,7 +47,31 @@ HTTP Method: GET
   "error": "Internal Server Error"
 }
 ```
-# 3. Update a Person
+# 3.  Get all Persons
+Endpoint: /api
+HTTP Method: GET
+* Response Format (Success):
+```json
+[
+    {
+        "_id": "64ff288b0db1fc84b4c40de2",
+        "name": "Arike",
+        "__v": 0
+    },
+    {
+        "_id": "64ff2bb8ac4507004a7f67fe",
+        "name": "Sapphire Abidoye",
+        "__v": 0
+    }
+]
+```
+* Response Format (Error):
+```json
+{
+  "error": "Internal Server Error"
+}
+```
+# 4. Update a Person
 Endpoint: /api/:user_id
 HTTP Method: PUT
 *  Request Body Format:
@@ -70,7 +94,7 @@ HTTP Method: PUT
   "error": "Internal Server Error"
 }
 ```
-# 4. Delete a Person
+# 5. Delete a Person
 Endpoint: /api/:user_id
 HTTP Method: DELETE
 * Response Format (Success):
@@ -103,4 +127,4 @@ $ yarn
 $ yarn start
 ```
 
-The API will be available at http://localhost:3000
+The API will be available at https://resource-api.onrender.com/api
