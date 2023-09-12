@@ -127,4 +127,4 @@ $ yarn
 $ yarn start
 ```
 
-The API will be available at https://resource-api.onrender.com/api
+The API will be available at https://resource-api.onrender.com
