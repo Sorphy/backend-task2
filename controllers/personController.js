@@ -48,7 +48,7 @@ export async function getAllPersons(req, res) {
     const persons = await Person.find(); 
     res.status(200).json(persons);
   } catch (err) {
-    handleServerError(res, err);
+    handleServerEror(res, err);
   }
 } 
 
