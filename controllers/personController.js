@@ -30,16 +30,12 @@ export async function createPerson(req, res) {
   }
 }
 
-export async function getPersonById(req, res) {
+export async function getAllPersons(req, res) {
   try {
-    const person = await Person.findById(req.params.user_id);
-    if (!person) {
-      return res.status(404).json({ error: "Person not found" });
-      console.log("person not found");
-    }
-    res.status(200).json(person);
+    const persons = await Person.find(); // Retrieve all Person objects from the database
+    res.status(200).json(persons);
   } catch (err) {
-    handleServerEror(res, err);
+    handleServerError(res, err);
   }
 }
 export async function updatePersonById(req, res) {
